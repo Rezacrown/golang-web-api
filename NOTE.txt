@@ -1,0 +1,8 @@
+LATAHIAN MEMBUAT WEB API DENGAN GOLANG:
+
+
+source: https://www.youtube.com/watch?v=GjI0GSvmcSU&t=3956s&ab_channel=AgungSetiawan
+
+
+1. untuk Auto Reload pakai Package namanya: "Air"
+
