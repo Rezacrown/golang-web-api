@@ -1,7 +1,7 @@
 package main
 
 import (
-	book "go-web-api/handler"
+	"go-web-api/handler"
 
 	"github.com/gin-gonic/gin"
 )
@@ -9,10 +9,17 @@ import (
 func main() {
 	r := gin.Default()
 
-	r.GET("/book", book.GetBookHandler)
-	r.GET("/book/:id", book.GetBookByIdHandler)
+	//
+	v1 := r.Group("/v1")
 
-	r.POST("/book", book.PostBookHandler)
+	v1.GET("/book", handler.GetBookHandler)
+	v1.GET("/book/:id", handler.GetByIdBookHandler)
+
+	v1.POST("/book", handler.CreateBookHandler)
+
+	v1.PUT("/book/:id", handler.UpdateBookHandler)
+
+	v1.DELETE("/book/:id", handler.DeleteBookHandler)
 
 	r.Run("localhost:8000") // listen and serve on 0.0.0.0:8080
 }
